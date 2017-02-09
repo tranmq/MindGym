@@ -3,7 +3,7 @@
     public class SpiralPrintMatrix
     {
         private readonly IOutput _output;
-        private Direction[] _spirals = { Direction.Right, Direction.Down, Direction.Left, Direction.Up };
+        private Direction[] _spirals = { Direction.East, Direction.South, Direction.West, Direction.North };
 
         public SpiralPrintMatrix(IOutput output)
         {
@@ -35,28 +35,28 @@
         {
             switch (direction)
             {
-                case Direction.Right:
+                case Direction.East:
                     for (int i = left; i <= right; i++)
                     {
                         _output.Out(input[top, i].ToString());
                     }
                     top++;
                     break;
-                case Direction.Down:
+                case Direction.South:
                     for (int i = top; i <= bottom; i++)
                     {
                         _output.Out(input[i, right].ToString());
                     }
                     right--;
                     break;
-                case Direction.Left:
+                case Direction.West:
                     for (int i = right; i >= left; i--)
                     {
                         _output.Out(input[bottom, i].ToString());
                     }
                     bottom--;
                     break;
-                case Direction.Up:
+                case Direction.North:
                     for (int i = bottom; i >= top; i--)
                     {
                         _output.Out(input[i, left].ToString());
@@ -68,10 +68,10 @@
 
         private enum Direction
         {
-            Right,
-            Left,
-            Up,
-            Down
+            East,
+            West,
+            North,
+            South
         }
     }
 }
