@@ -1,4 +1,4 @@
-﻿namespace MazeNavigate
+﻿namespace MindGym.ShortestPathThroughMaze
 {
     internal class Node
     {

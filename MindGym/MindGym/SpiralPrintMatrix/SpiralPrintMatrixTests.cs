@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using NUnit.Framework;
 
-namespace Interview.SpiralPrintMatrix
+namespace MindGym.SpiralPrintMatrix
 {
     internal class OutToList : IOutput
     {
@@ -42,7 +41,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputHasOnlyOneItem_ShouldSucceed()
         {
-            var input = new int[1, 1] { { 1 } };
+            var input = new[,] { { 1 } };
             _sut.SpiralWalk(input);
             Assert.AreEqual("1", _output.OutputResult);
         }
@@ -50,7 +49,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputHasOnlyOneRow_ShouldSucceed()
         {
-            var input = new int[,] { { 1, 2, 3 } };
+            var input = new[,] { { 1, 2, 3 } };
             _sut.SpiralWalk(input);
             Assert.AreEqual("1|2|3", _output.OutputResult);
         }
@@ -58,7 +57,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputHasOnlyOneColumn_ShouldSucceed()
         {
-            var input = new int[,]
+            var input = new[,]
                         {
                             {1},
                             {2},
@@ -71,7 +70,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputIs2x2Matrix_ShouldSucceed()
         {
-            var input = new int[,]
+            var input = new[,]
                         {
                             {1, 2},
                             {4, 3}
@@ -83,7 +82,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputIs2x3Matrix_ShouldSucceed()
         {
-            var input = new int[,]
+            var input = new[,]
                         {
                             {1, 2, 3},
                             {6, 5, 4}
@@ -95,7 +94,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputIs3x2Matrix_ShouldSucceed()
         {
-            var input = new int[,]
+            var input = new[,]
                         {
                             {1, 2},
                             {6, 3},
@@ -108,7 +107,7 @@ namespace Interview.SpiralPrintMatrix
         [Test]
         public void SpiralWalk_WhenInputIs5x5Matrix_ShouldSucceed()
         {
-            var input = new int[,]
+            var input = new[,]
                         {
                             {1,  2,  3,  4,  5},
                             {16, 17, 18, 19, 6},

@@ -1,4 +1,4 @@
-﻿namespace Interview.SpiralPrintMatrix
+﻿namespace MindGym.SpiralPrintMatrix
 {
     public class SpiralPrintMatrix
     {

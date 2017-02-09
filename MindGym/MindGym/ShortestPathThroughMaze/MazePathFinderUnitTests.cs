@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace MazeNavigate.Tests
+namespace MindGym.ShortestPathThroughMaze
 {
     [TestFixture]
     public class MazePathFinderUnitTests

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MazeNavigate
+namespace MindGym.ShortestPathThroughMaze
 {
     public class MazePathFinder : IMazePathFinder
     {

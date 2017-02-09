@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace MazeNavigate
+namespace MindGym.ShortestPathThroughMaze
 {
     public struct Index : IEquatable<Index>
     {
