@@ -45,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortestPathThroughMaze\IMazePathFinder.cs" />
+    <Compile Include="ShortestPathThroughMaze\Index.cs" />
+    <Compile Include="ShortestPathThroughMaze\MazePathFinder.cs" />
+    <Compile Include="ShortestPathThroughMaze\MazePathFinderUnitTests.cs" />
+    <Compile Include="ShortestPathThroughMaze\Node.cs" />
     <Compile Include="SpiralPrintMatrix\IOutput.cs" />
     <Compile Include="SpiralPrintMatrix\SpiralPrintMatrix.cs" />
     <Compile Include="SpiralPrintMatrix\SpiralPrintMatrixTests.cs" />
