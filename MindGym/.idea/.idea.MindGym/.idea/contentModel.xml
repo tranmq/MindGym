@@ -5,7 +5,19 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="MindGym" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="DiceScorer" t="Include" />
+        <e p="DiceScorer" t="Include">
+          <e p="AbstractScorer.cs" t="Include" />
+          <e p="AllOfAKindScorer.cs" t="Include" />
+          <e p="ExactMatchScorer.cs" t="Include" />
+          <e p="IScorer.cs" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="SameKindScorer.cs" t="Include" />
+          <e p="Tests" t="Include">
+            <e p="AllOfAKindScorerTests.cs" t="Include" />
+            <e p="ExactMatchScorerTests.cs" t="Include" />
+            <e p="SameKindScorerTests.cs" t="Include" />
+          </e>
+        </e>
         <e p="MindGym.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />

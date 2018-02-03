@@ -44,6 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+      <Compile Include="DiceScorer\AbstractScorer.cs"/>
+      <Compile Include="DiceScorer\AllOfAKindScorer.cs"/>
+      <Compile Include="DiceScorer\IScorer.cs"/>
+      <Compile Include="DiceScorer\ExactMatchScorer.cs"/>
+      <Compile Include="DiceScorer\Tests\AllOfAKindScorerTests.cs"/>
+      <Compile Include="DiceScorer\Tests\ExactMatchScorerTests.cs"/>
+      <Compile Include="DiceScorer\Tests\SameKindScorerTests.cs"/>
+      <Compile Include="DiceScorer\SameKindScorer.cs"/>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortestPathThroughMaze\IMazePathFinder.cs" />
     <Compile Include="ShortestPathThroughMaze\Index.cs" />
@@ -60,7 +68,7 @@
     <None Include="SpiralPrintMatrix\ReadMe.md" />
   </ItemGroup>
     <ItemGroup>
-        <Folder Include="DiceScorer"/>
+        <Content Include="DiceScorer\ReadMe.md"/>
     </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
