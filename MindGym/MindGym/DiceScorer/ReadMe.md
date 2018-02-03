@@ -1,4 +1,4 @@
-#Dice Scorer
+# Dice Scorer
 
 You have five eight-sided dice, and based on your roll, you can get a certain score as outlined below. Given a five-item array of integers (which represent the values rolled), return the highest possible score. 
   
