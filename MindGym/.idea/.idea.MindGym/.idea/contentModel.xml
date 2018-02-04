@@ -6,16 +6,31 @@
       <e p="MindGym" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DiceScorer" t="Include">
-          <e p="AbstractScorer.cs" t="Include" />
-          <e p="AllOfAKindScorer.cs" t="Include" />
-          <e p="ExactMatchScorer.cs" t="Include" />
+          <e p="IScoreEngine.cs" t="Include" />
           <e p="IScorer.cs" t="Include" />
           <e p="README.md" t="Include" />
-          <e p="SameKindScorer.cs" t="Include" />
+          <e p="ScoreEngine.cs" t="Include" />
+          <e p="Scorers" t="Include">
+            <e p="AbstractScorer.cs" t="Include" />
+            <e p="AllOfAKindScorer.cs" t="Include" />
+            <e p="ChanceScorer.cs" t="Include" />
+            <e p="ExactMatchScorer.cs" t="Include" />
+            <e p="FullHouseScorer.cs" t="Include" />
+            <e p="LargeStraightScorer.cs" t="Include" />
+            <e p="NoneOfAKindScorer.cs" t="Include" />
+            <e p="SameKindScorer.cs" t="Include" />
+            <e p="SmallStraightScorer.cs" t="Include" />
+          </e>
           <e p="Tests" t="Include">
             <e p="AllOfAKindScorerTests.cs" t="Include" />
+            <e p="ChanceScorerTests.cs" t="Include" />
             <e p="ExactMatchScorerTests.cs" t="Include" />
+            <e p="FullHouseScorerTests.cs" t="Include" />
+            <e p="LargeStraightScorerTests.cs" t="Include" />
+            <e p="NoneOfAKindScorerTests.cs" t="Include" />
             <e p="SameKindScorerTests.cs" t="Include" />
+            <e p="ScoreEngineTests.cs" t="Include" />
+            <e p="SmallStraightScorerTests.cs" t="Include" />
           </e>
         </e>
         <e p="MindGym.csproj" t="IncludeRecursive" />

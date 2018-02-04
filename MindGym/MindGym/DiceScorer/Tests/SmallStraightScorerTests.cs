@@ -5,10 +5,10 @@ using NUnit.Framework;
 namespace MindGym.DiceScorer.Tests
 {
     [TestFixture]
-    public class AllOfAKindScorerTests
+    public class SmallStraightScorerTests
     {
-        private readonly AllOfAKindScorer _sut = new AllOfAKindScorer();
-
+        private readonly SmallStraightScorer _sut = new SmallStraightScorer();
+        
         [Test]
         public void Score_WhenInputIsNull_ShouldReturnZero()
         {
@@ -29,9 +29,9 @@ namespace MindGym.DiceScorer.Tests
             var result = _sut.Score(new [] {1, 2, 3, 4, 9});
             Assert.IsTrue(result == 0);
         }
-
-        [Test, TestCaseSource(typeof(DataToTestAllOfAKindScorer), nameof(DataToTestAllOfAKindScorer.TestCases))]
-        public int Score_AllOfAKindTests(int[] inputs)
+        
+        [Test, TestCaseSource(typeof(DataToTestSmallStraightScorer), nameof(DataToTestSmallStraightScorer.TestCases))]
+        public int Score_SmallStraightTests(int[] inputs)
         {
             return _sut.Score(inputs);
         }
@@ -41,21 +41,25 @@ namespace MindGym.DiceScorer.Tests
     // Test case data
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    public class DataToTestAllOfAKindScorer
+    public class DataToTestSmallStraightScorer
     {
-        private const int AllOfAKindScore = 50;
+        private const int SmallStraightScore = 30;
         private const int DefaultScore = 0;
         
         public static IEnumerable TestCases
         {
             get
             {
-                yield return new TestCaseData(new[] {1, 1, 1, 1, 1}).Returns(AllOfAKindScore);
-                yield return new TestCaseData(new[] {4, 4, 4, 4, 4}).Returns(AllOfAKindScore);
+                yield return new TestCaseData(new[] {1, 1, 1, 1, 1}).Returns(DefaultScore);
                 yield return new TestCaseData(new[] {7, 7, 7, 7, 8}).Returns(DefaultScore);
                 yield return new TestCaseData(new[] {5, 7, 5, 3, 5}).Returns(DefaultScore);
-                yield return new TestCaseData(new[] {1, 2, 3, 4, 5}).Returns(DefaultScore);
+                yield return new TestCaseData(new[] {1, 6, 5, 4, 3}).Returns(SmallStraightScore);
+                yield return new TestCaseData(new[] {1, 4, 5, 6, 7}).Returns(SmallStraightScore);
+                yield return new TestCaseData(new[] {1, 2, 3, 4, 5}).Returns(SmallStraightScore);
+                yield return new TestCaseData(new[] {1, 2, 3, 4, 8}).Returns(SmallStraightScore);
+                yield return new TestCaseData(new[] {5, 6, 7, 8, 8}).Returns(SmallStraightScore);
+                yield return new TestCaseData(new[] {6, 5, 4, 3, 2}).Returns(SmallStraightScore);
             }
         }
-    }
+    }        
 }

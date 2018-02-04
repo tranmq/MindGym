@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace MindGym.DiceScorer
+namespace MindGym.DiceScorer.Scorers
 {
     public class AbstractScorer : IScorer
     {
@@ -9,7 +9,7 @@ namespace MindGym.DiceScorer
             throw new System.NotImplementedException();
         }
 
-        protected bool IsValidInput(int[] inputs)
+        protected static bool IsValidInput(int[] inputs)
         {
             if (inputs == null || inputs.Length != 5)
             {
@@ -19,7 +19,7 @@ namespace MindGym.DiceScorer
             return inputs.All(item => item >= 1 && item <= 8);
         }
 
-        protected bool IsScoreInRange(int score)
+        protected static bool IsScoreInRange(int score)
         {
             return score >= 1 && score <= 8;
         }

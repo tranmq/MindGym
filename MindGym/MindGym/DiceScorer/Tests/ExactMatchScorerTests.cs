@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using MindGym.DiceScorer.Scorers;
 using NUnit.Framework;
 
 namespace MindGym.DiceScorer.Tests

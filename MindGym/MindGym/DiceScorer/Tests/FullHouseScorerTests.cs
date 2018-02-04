@@ -5,10 +5,10 @@ using NUnit.Framework;
 namespace MindGym.DiceScorer.Tests
 {
     [TestFixture]
-    public class AllOfAKindScorerTests
+    public class FullHouseScorerTests
     {
-        private readonly AllOfAKindScorer _sut = new AllOfAKindScorer();
-
+        private readonly FullHouseScorer _sut = new FullHouseScorer();
+        
         [Test]
         public void Score_WhenInputIsNull_ShouldReturnZero()
         {
@@ -29,9 +29,9 @@ namespace MindGym.DiceScorer.Tests
             var result = _sut.Score(new [] {1, 2, 3, 4, 9});
             Assert.IsTrue(result == 0);
         }
-
-        [Test, TestCaseSource(typeof(DataToTestAllOfAKindScorer), nameof(DataToTestAllOfAKindScorer.TestCases))]
-        public int Score_AllOfAKindTests(int[] inputs)
+        
+        [Test, TestCaseSource(typeof(DataToTestFullHouseScorer), nameof(DataToTestFullHouseScorer.TestCases))]
+        public int Score_FullHouseTests(int[] inputs)
         {
             return _sut.Score(inputs);
         }
@@ -41,20 +41,19 @@ namespace MindGym.DiceScorer.Tests
     // Test case data
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    public class DataToTestAllOfAKindScorer
+    public class DataToTestFullHouseScorer
     {
-        private const int AllOfAKindScore = 50;
+        private const int FullHouseScore = 25;
         private const int DefaultScore = 0;
-        
         public static IEnumerable TestCases
         {
             get
             {
-                yield return new TestCaseData(new[] {1, 1, 1, 1, 1}).Returns(AllOfAKindScore);
-                yield return new TestCaseData(new[] {4, 4, 4, 4, 4}).Returns(AllOfAKindScore);
-                yield return new TestCaseData(new[] {7, 7, 7, 7, 8}).Returns(DefaultScore);
+                yield return new TestCaseData(new[] {1, 1, 2, 2, 2}).Returns(FullHouseScore);
+                yield return new TestCaseData(new[] {7, 3, 7, 3, 7}).Returns(FullHouseScore);
                 yield return new TestCaseData(new[] {5, 7, 5, 3, 5}).Returns(DefaultScore);
                 yield return new TestCaseData(new[] {1, 2, 3, 4, 5}).Returns(DefaultScore);
+                yield return new TestCaseData(new[] {2, 2, 3, 3, 5}).Returns(DefaultScore);
             }
         }
     }

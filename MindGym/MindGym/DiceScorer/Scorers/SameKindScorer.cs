@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace MindGym.DiceScorer
+namespace MindGym.DiceScorer.Scorers
 {
     /// <summary>
     /// X of a kind scorer

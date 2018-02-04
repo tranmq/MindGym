@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 
-namespace MindGym.DiceScorer
+namespace MindGym.DiceScorer.Scorers
 {
     public class AllOfAKindScorer : AbstractScorer
     {
-        private const int _defaultScore = 50;
+        private const int DefaultScore = 50;
         
         public override int Score(int[] inputs)
         {
@@ -13,7 +13,7 @@ namespace MindGym.DiceScorer
                 return 0;
             }
             
-            return _defaultScore;
+            return DefaultScore;
         }
 
         private static bool AreAllOfAKind(int[] inputs)

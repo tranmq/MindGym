@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace MindGym.DiceScorer
+namespace MindGym.DiceScorer.Scorers
 {
     /// <summary>
     /// Score by calculating the sum of items that match its set score.

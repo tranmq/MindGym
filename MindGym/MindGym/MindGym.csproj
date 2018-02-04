@@ -44,14 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-      <Compile Include="DiceScorer\AbstractScorer.cs"/>
-      <Compile Include="DiceScorer\AllOfAKindScorer.cs"/>
-      <Compile Include="DiceScorer\IScorer.cs"/>
-      <Compile Include="DiceScorer\ExactMatchScorer.cs"/>
-      <Compile Include="DiceScorer\Tests\AllOfAKindScorerTests.cs"/>
-      <Compile Include="DiceScorer\Tests\ExactMatchScorerTests.cs"/>
-      <Compile Include="DiceScorer\Tests\SameKindScorerTests.cs"/>
-      <Compile Include="DiceScorer\SameKindScorer.cs"/>
+    <Compile Include="DiceScorer\IScoreEngine.cs"/>
+    <Compile Include="DiceScorer\IScorer.cs"/>
+    <Compile Include="DiceScorer\ScoreEngine.cs"/>
+    <Compile Include="DiceScorer\Scorers\AbstractScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\AllOfAKindScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\ChanceScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\ExactMatchScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\FullHouseScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\LargeStraightScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\NoneOfAKindScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\SameKindScorer.cs"/>
+    <Compile Include="DiceScorer\Scorers\SmallStraightScorer.cs"/>
+    <Compile Include="DiceScorer\Tests\AllOfAKindScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\ChanceScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\ExactMatchScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\FullHouseScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\LargeStraightScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\NoneOfAKindScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\SameKindScorerTests.cs"/>
+    <Compile Include="DiceScorer\Tests\ScoreEngineTests.cs"/>
+    <Compile Include="DiceScorer\Tests\SmallStraightScorerTests.cs"/>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortestPathThroughMaze\IMazePathFinder.cs" />
     <Compile Include="ShortestPathThroughMaze\Index.cs" />
@@ -67,9 +80,9 @@
     <None Include="ShortestPathThroughMaze\README.md" />
     <None Include="SpiralPrintMatrix\ReadMe.md" />
   </ItemGroup>
-    <ItemGroup>
-        <Content Include="DiceScorer\ReadMe.md"/>
-    </ItemGroup>
+  <ItemGroup>
+    <Content Include="DiceScorer\ReadMe.md"/>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
