@@ -1,4 +1,5 @@
-﻿using MindGym.DiceScorer.Scorers;
+﻿using System.Collections;
+using MindGym.DiceScorer.Scorers;
 using NUnit.Framework;
 
 namespace MindGym.DiceScorer.Tests
@@ -6,7 +7,7 @@ namespace MindGym.DiceScorer.Tests
     [TestFixture]
     public class ScoreEngineTests
     {
-        private ScoreEngine _sut;
+        private ScoreEngine _sut = new ScoreEngine(true);
 
         [Test]
         public void Score_WhenNotInitializedWithAnyScorers_ShouldReturnZero()
@@ -36,6 +37,29 @@ namespace MindGym.DiceScorer.Tests
             var inputs = new[] {1, 1, 1, 1, 6};
             var score = _sut.Score(inputs);
             Assert.AreEqual(10, score);
+        }
+
+        [Test, TestCaseSource(typeof(DataToTestScoreEngine), nameof(DataToTestScoreEngine.TestCases))]
+        public int Score_WhenInitializedWithAllScorers_ShouldReturnCorrectScore(int[] inputs)
+        {
+            return _sut.Score(inputs);
+        }
+    }
+        
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Test case data
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class DataToTestScoreEngine
+    {
+        public static IEnumerable TestCases
+        {
+            get
+            {
+                yield return new TestCaseData(new[] {1, 1, 1, 4, 8}).Returns(15); // test case from the homework
+                yield return new TestCaseData(new[] {8, 8, 8, 8, 8}).Returns(50);
+                yield return new TestCaseData(new[] {7, 6, 5, 4, 3}).Returns(40);
+            }
         }
     }
 }

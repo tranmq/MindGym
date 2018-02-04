@@ -35,15 +35,6 @@ namespace MindGym.DiceScorer.Tests
         {
             return _sut.Score(inputs);
         }
-
-        [Test]
-        public void MqTest()
-        {
-            var type = _sut.GetType();
-            IScorer scorer = new ChanceScorer();
-
-            type = scorer.GetType();
-        }
     }
     
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
